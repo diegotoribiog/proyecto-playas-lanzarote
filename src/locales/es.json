@@ -1,0 +1,69 @@
+{
+    "header": {
+        "title": "Playas de Lanzarote",
+        "beaches": "Playas",
+        "map": "Mapa",
+        "statistics": "Estadísticas"
+    },
+    "sidebar": {
+        "search_placeholder": "Buscar playa...",
+        "filters": "Filtros:",
+        "services": {
+        "toilets": "Aseos",
+        "showers": "Duchas",
+        "parking": "Aparcamiento",
+        "bus": "Autobús",
+        "bin": "Papelera"
+        },
+        "sand_type": {
+        "title": "Tipo de arena:",
+        "golden": "Dorada",
+        "dark": "Oscura",
+        "white": "Blanca"
+        },
+        "access_type": {
+        "title": "Forma de acceso:",
+        "easy_walk": "A pie fácil",
+        "hard_walk": "A pie difícil",
+        "car": "Coche",
+        "boat": "Barco"
+        },
+        "occupation": {
+        "title": "Grado de ocupación:",
+        "all": "Todos",
+        "low": "Bajo",
+        "medium": "Medio",
+        "high": "Alto"
+        }
+    },
+    "statistics": {
+        "total_beaches": "Total de playas",
+        "services": "Servicios disponibles",
+        "occupation_levels": "Niveles de ocupación",
+        "high": "Alto",
+        "medium": "Medio",
+        "low": "Bajo",
+        "sand_types": "Tipos de arena",
+        "access_types": "Tipos de acceso"
+    },
+    "details": {
+        "general_info": "Información general",
+        "municipio": "Municipio",
+        "tipo_arena": "Tipo de arena",
+        "acceso": "Acceso",
+        "acceso_discapacitados": "Acceso para discapacitados",
+        "longitud": "Longitud",
+        "anchura": "Anchura",
+        "condiciones": "Condiciones",
+        "grado_ocupacion": "Grado de ocupación",
+        "grado_urbanizacion": "Grado de urbanización",
+        "nudismo": "Nudismo",
+        "climate": "Clima actual",
+        "temperatura": "Temperatura",
+        "condicion": "Condición",
+        "viento": "Viento",
+        "humedad": "Humedad",
+        "description": "Descripción",
+        "services": "Servicios"
+    }
+}

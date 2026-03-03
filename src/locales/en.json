@@ -1,0 +1,69 @@
+{
+    "header": {
+        "title": "Beaches of Lanzarote",
+        "beaches": "Beaches",
+        "map": "Map",
+        "statistics": "Statistics"
+    },
+    "sidebar": {
+        "search_placeholder": "Search beach...",
+        "filters": "Filters:",
+        "services": {
+        "toilets": "Toilets",
+        "showers": "Showers",
+        "parking": "Parking",
+        "bus": "Bus",
+        "bin": "Bin"
+        },
+        "sand_type": {
+        "title": "Sand type:",
+        "golden": "Golden",
+        "dark": "Dark",
+        "white": "White"
+        },
+        "access_type": {
+        "title": "Access type:",
+        "easy_walk": "Easy walk",
+        "hard_walk": "Hard walk",
+        "car": "Car",
+        "boat": "Boat"
+        },
+        "occupation": {
+        "title": "Occupation level:",
+        "all": "All",
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+        }
+    },
+    "statistics": {
+        "total_beaches": "Total beaches",
+        "services": "Available services",
+        "occupation_levels": "Occupation levels",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low",
+        "sand_types": "Sand types",
+        "access_types": "Access types"
+    },
+    "details": {
+        "general_info": "General info",
+        "municipio": "Municipality",
+        "tipo_arena": "Sand type",
+        "acceso": "Access",
+        "acceso_discapacitados": "Disabled access",
+        "longitud": "Length",
+        "anchura": "Width",
+        "condiciones": "Conditions",
+        "grado_ocupacion": "Occupation level",
+        "grado_urbanizacion": "Urbanization level",
+        "nudismo": "Nudism",
+        "climate": "Current climate",
+        "temperatura": "Temperature",
+        "condicion": "Condition",
+        "viento": "Wind",
+        "humedad": "Humidity",
+        "description": "Description",
+        "services": "Services"
+    }
+}

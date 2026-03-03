@@ -60,10 +60,15 @@ watch(playaSeleccionada, async (playa) => {
         clima.value = null
     }
 }, { immediate: true })
+
+// i18n
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 
 <template>
-<div class="h-screen flex flex-col">
+    <div class="h-screen flex flex-col">
 
     <!-- Barra superior -->
     <Header />
@@ -72,73 +77,76 @@ watch(playaSeleccionada, async (playa) => {
     <div class="flex flex-1 overflow-hidden">
 
         <!-- Barra lateral -->
-        <sidebar />
+        <Sidebar />
 
         <!-- Información de la playa -->
         <main class="flex-1 p-6 overflow-y-auto space-y-4">
 
-            <div v-if="playaSeleccionada" class="space-y-4">
+        <div v-if="playaSeleccionada" class="space-y-4">
 
-                <!-- Cuadro de información general -->
-                <div class="bg-white shadow rounded p-4 space-y-2">
-                    <h2 class="text-2xl font-bold">{{ playaSeleccionada.properties.Nombre }}</h2>
-                    <p><strong>Municipio:</strong> {{ playaSeleccionada.properties.Término_M }}</p>
-                    <p><strong>Tipo de arena:</strong> {{ playaSeleccionada.properties.Tipo_de_ar }}</p>
-                    <p><strong>Acceso:</strong> {{ playaSeleccionada.properties.Forma_de_a }}</p>
-                    <p><strong>Acceso para discapacitados:</strong> {{ playaSeleccionada.properties.Acceso_dis }}</p>
-                    <p><strong>Longitud:</strong> {{ playaSeleccionada.properties.Longitud }}</p>
-                    <p><strong>Anchura:</strong> {{ playaSeleccionada.properties.Anchura }}</p>
-                    <p><strong>Condiciones:</strong> {{ playaSeleccionada.properties.Condicione }}</p>
-                    <p><strong>Grado de ocupación:</strong> {{ playaSeleccionada.properties.Grado_ocup }}</p>
-                    <p><strong>Grado de urbanización:</strong> {{ playaSeleccionada.properties.Grado_urba }}</p>
-                    <p><strong>Nudismo:</strong> {{ playaSeleccionada.properties.Nudismo }}</p>
-                </div>
-
-                <!-- Cuadro de clima -->
-                <div v-if="clima" class="bg-white shadow rounded p-4 mt-4">
-                <h2 class="font-bold text-2xl mb-2 flex items-center">Clima actual: <img :src="clima.condition.icon" alt="Icono del clima"></h2>
-                <div class="flex items-center space-x-3">
-                    <div>
-                        <p><strong>Temperatura:</strong> {{ clima.temp_c }}°C</p>
-                        <p><strong>Condición:</strong> {{ clima.condition.text }}</p>
-                        <p><strong>Viento:</strong> {{ clima.wind_kph }} km/h</p>
-                        <p><strong>Humedad:</strong> {{ clima.humidity }}%</p>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Cuadro de descripción -->
-                <div class="bg-white shadow rounded p-4">
-                    <h3 class="font-bold text-lg mb-2">Descripción</h3>
-                    <p>{{ playaSeleccionada.properties.Descripci }}</p>
-                </div>
-
-                <!-- Cuadro de servicios -->
-                <div class="bg-white shadow rounded p-4">
-                    <h3 class="font-bold text-lg mb-2">Servicios</h3>
-                    <ul class="flex flex-col space-y-1">
-                        <li>
-                            <input type="checkbox" :checked="playaSeleccionada.properties.Aseos === 'Sí'" disabled /> Aseos
-                        </li>
-                        <li>
-                            <input type="checkbox" :checked="playaSeleccionada.properties.Duchas === 'Sí'" disabled /> Duchas
-                        </li>
-                        <li>
-                            <input type="checkbox" :checked="playaSeleccionada.properties.Aparcamien === 'Sí'" disabled /> Aparcamiento
-                        </li>
-                        <li>
-                            <input type="checkbox" :checked="playaSeleccionada.properties['Autobús'] === 'Sí'" disabled /> Autobús
-                        </li>
-                        <li>
-                            <input type="checkbox" :checked="playaSeleccionada.properties.Papelera === 'Sí'" disabled /> Papelera
-                        </li>
-                    </ul>
-                </div>
-
+            <!-- Cuadro de información general -->
+            <div class="bg-white shadow rounded p-4 space-y-2">
+            <h2 class="text-2xl font-bold">{{ $t('details.general_info') }}</h2>
+            <p><strong>{{ $t('details.municipio') }}:</strong> {{ playaSeleccionada.properties.Término_M }}</p>
+            <p><strong>{{ $t('details.tipo_arena') }}:</strong> {{ playaSeleccionada.properties.Tipo_de_ar }}</p>
+            <p><strong>{{ $t('details.acceso') }}:</strong> {{ playaSeleccionada.properties.Forma_de_a }}</p>
+            <p><strong>{{ $t('details.acceso_discapacitados') }}:</strong> {{ playaSeleccionada.properties.Acceso_dis }}</p>
+            <p><strong>{{ $t('details.longitud') }}:</strong> {{ playaSeleccionada.properties.Longitud }}</p>
+            <p><strong>{{ $t('details.anchura') }}:</strong> {{ playaSeleccionada.properties.Anchura }}</p>
+            <p><strong>{{ $t('details.condiciones') }}:</strong> {{ playaSeleccionada.properties.Condicione }}</p>
+            <p><strong>{{ $t('details.grado_ocupacion') }}:</strong> {{ playaSeleccionada.properties.Grado_ocup }}</p>
+            <p><strong>{{ $t('details.grado_urbanizacion') }}:</strong> {{ playaSeleccionada.properties.Grado_urba }}</p>
+            <p><strong>{{ $t('details.nudismo') }}:</strong> {{ playaSeleccionada.properties.Nudismo }}</p>
             </div>
+
+            <!-- Cuadro de clima -->
+            <div v-if="clima" class="bg-white shadow rounded p-4 mt-4">
+            <h2 class="font-bold text-2xl mb-2 flex items-center">
+                {{ $t('details.climate') }}: 
+                <img :src="clima.condition.icon" alt="Icono del clima">
+            </h2>
+            <div class="flex items-center space-x-3">
+                <div>
+                <p><strong>{{ $t('details.temperatura') }}:</strong> {{ clima.temp_c }}°C</p>
+                <p><strong>{{ $t('details.condicion') }}:</strong> {{ clima.condition.text }}</p>
+                <p><strong>{{ $t('details.viento') }}:</strong> {{ clima.wind_kph }} km/h</p>
+                <p><strong>{{ $t('details.humedad') }}:</strong> {{ clima.humidity }}%</p>
+                </div>
+            </div>
+            </div>
+
+            <!-- Cuadro de descripción -->
+            <div class="bg-white shadow rounded p-4">
+            <h3 class="font-bold text-lg mb-2">{{ $t('details.description') }}</h3>
+            <p>{{ playaSeleccionada.properties.Descripci }}</p>
+            </div>
+
+            <!-- Cuadro de servicios -->
+            <div class="bg-white shadow rounded p-4">
+            <h3 class="font-bold text-lg mb-2">{{ $t('details.services') }}</h3>
+            <ul class="flex flex-col space-y-1">
+                <li>
+                <input type="checkbox" :checked="playaSeleccionada.properties.Aseos === 'Sí'" disabled /> {{ t('sidebar.services.toilets') }}
+                </li>
+                <li>
+                <input type="checkbox" :checked="playaSeleccionada.properties.Duchas === 'Sí'" disabled /> {{ t('sidebar.services.showers') }}
+                </li>
+                <li>
+                <input type="checkbox" :checked="playaSeleccionada.properties.Aparcamien === 'Sí'" disabled /> {{ t('sidebar.services.parking') }}
+                </li>
+                <li>
+                <input type="checkbox" :checked="playaSeleccionada.properties['Autobús'] === 'Sí'" disabled /> {{ t('sidebar.services.bus') }}
+                </li>
+                <li>
+                <input type="checkbox" :checked="playaSeleccionada.properties.Papelera === 'Sí'" disabled /> {{ t('sidebar.services.bin') }}
+                </li>
+            </ul>
+            </div>
+
+        </div>
 
         </main>
 
     </div>
-</div>
+    </div>
 </template>
